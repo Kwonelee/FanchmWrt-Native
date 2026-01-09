@@ -14,10 +14,10 @@ sed -i -e 's/^\(.\).*vermagic$/\1cp $(TOPDIR)\/.vermagic $(LINUX_DIR)\/.vermagic
 # ============================================================================================================
 # 添加设备⬇⬇⬇
 echo -e "\\ndefine Device/firefly_station-m2
-  \$(Device/rk3566)
   DEVICE_VENDOR := Firefly
   DEVICE_MODEL := Station M2 / RK3566 ROC PC
-  DEVICE_DTS := rk3566-roc-pc
+  SOC := rk3566
+  DEVICE_DTS := rockchip/rk3566-roc-pc
   SUPPORTED_DEVICES += firefly,rk3566-roc-pc firefly,station-m2
   UBOOT_DEVICE_NAME := station-m2-rk3566
   DEVICE_PACKAGES := kmod-nvme kmod-scsi-core
