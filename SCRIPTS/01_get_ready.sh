@@ -46,31 +46,32 @@ sbwfw876_repo="https://github.com/sbwml/openwrt_helloworld"
 sbw_pkg_repo="https://github.com/sbwml/openwrt_pkgs"
 natmap_repo="https://github.com/blueberry-pie-11/luci-app-natmap"
 xwrt_repo="https://github.com/QiuSimons/openwrt-natflow"
+fanchmwrt_repo="https://github.com/fanchmwrt/fanchmwrt.git"
 
 # 开始克隆仓库，并行执行
-clone_repo $openwrt_repo $latest_release openwrt &
+clone_repo $fanchmwrt fanchmwrt-24.10.4 openwrt &
 #clone_repo $openwrt_repo openwrt-24.10 openwrt &
-clone_repo $openwrt_repo openwrt-24.10 openwrt_snap &
-clone_repo $immortalwrt_repo openwrt-24.10 immortalwrt_24 &
-clone_repo $immortalwrt_repo openwrt-23.05 immortalwrt_23 &
+#clone_repo $openwrt_repo openwrt-24.10 openwrt_snap &
+#clone_repo $immortalwrt_repo openwrt-24.10 immortalwrt_24 &
+#clone_repo $immortalwrt_repo openwrt-23.05 immortalwrt_23 &
 
-clone_repo $lede_repo master lede &
-clone_repo $lede_pkg_repo master lede_pkg_ma &
-clone_repo $openwrt_repo main openwrt_ma &
-clone_repo $openwrt_pkg_repo master openwrt_pkg_ma &
-clone_repo $openwrt_add_repo master OpenWrt-Add &
-clone_repo $dockerman_repo master dockerman &
-clone_repo $docker_lib_repo master docker_lib &
+#clone_repo $lede_repo master lede &
+#clone_repo $lede_pkg_repo master lede_pkg_ma &
+#clone_repo $openwrt_repo main openwrt_ma &
+#clone_repo $openwrt_pkg_repo master openwrt_pkg_ma &
+#clone_repo $openwrt_add_repo master OpenWrt-Add &
+#clone_repo $dockerman_repo master dockerman &
+#clone_repo $docker_lib_repo master docker_lib &
 # 等待所有后台任务完成
 wait
 
 # 进行一些处理
-find openwrt/package/* -maxdepth 0 ! -name 'firmware' ! -name 'kernel' ! -name 'base-files' ! -name 'Makefile' -exec rm -rf {} +
-rm -rf ./openwrt_snap/package/firmware ./openwrt_snap/package/kernel ./openwrt_snap/package/base-files ./openwrt_snap/package/Makefile
-cp -rf ./openwrt_snap/package/* ./openwrt/package/
-cp -rf ./openwrt_snap/feeds.conf.default ./openwrt/feeds.conf.default
+#find openwrt/package/* -maxdepth 0 ! -name 'firmware' ! -name 'kernel' ! -name 'base-files' ! -name 'Makefile' -exec rm -rf {} +
+#rm -rf ./openwrt_snap/package/firmware ./openwrt_snap/package/kernel ./openwrt_snap/package/base-files ./openwrt_snap/package/Makefile
+#cp -rf ./openwrt_snap/package/* ./openwrt/package/
+#cp -rf ./openwrt_snap/feeds.conf.default ./openwrt/feeds.conf.default
 # 修复缺失的 kmod-drm-lima
-cp -rf ./immortalwrt_24/package/kernel/linux/modules/video.mk ./openwrt/package/kernel/linux/modules/
+#cp -rf ./immortalwrt_24/package/kernel/linux/modules/video.mk ./openwrt/package/kernel/linux/modules/
 
 # 退出脚本
 exit 0
