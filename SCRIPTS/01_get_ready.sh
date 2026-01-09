@@ -13,7 +13,7 @@ clone_repo() {
 }
 
 # 定义一些变量，存储仓库地址和分支名
-latest_release="$(curl -s https://github.com/openwrt/openwrt/tags | grep -Eo "v[0-9\.]+\-*r*c*[0-9]*.tar.gz" | sed -n '/[2-9][5-9]/p' | sed -n 1p | sed 's/.tar.gz//g')"
+latest_release="$(curl -s https://github.com/openwrt/openwrt/tags | grep -Eo "v[0-9\.]+\-*r*c*[0-9]*.tar.gz" | sed -n '/[2-9]4/p' | sed -n 1p | sed 's/.tar.gz//g')"
 immortalwrt_repo="https://github.com/immortalwrt/immortalwrt.git"
 immortalwrt_pkg_repo="https://github.com/immortalwrt/packages.git"
 immortalwrt_luci_repo="https://github.com/immortalwrt/luci.git"
@@ -49,8 +49,8 @@ xwrt_repo="https://github.com/QiuSimons/openwrt-natflow"
 
 # 开始克隆仓库，并行执行
 clone_repo $openwrt_repo $latest_release openwrt &
-#clone_repo $openwrt_repo openwrt-25.12 openwrt &
-clone_repo $openwrt_repo openwrt-25.12 openwrt_snap &
+#clone_repo $openwrt_repo openwrt-24.10 openwrt &
+clone_repo $openwrt_repo openwrt-24.10 openwrt_snap &
 clone_repo $immortalwrt_repo openwrt-24.10 immortalwrt_24 &
 clone_repo $immortalwrt_repo openwrt-23.05 immortalwrt_23 &
 
@@ -65,13 +65,12 @@ clone_repo $docker_lib_repo master docker_lib &
 wait
 
 # 进行一些处理
-cp -rf openwrt/package/system/ca-certificates /tmp/ca-certificates.bak
 find openwrt/package/* -maxdepth 0 ! -name 'firmware' ! -name 'kernel' ! -name 'base-files' ! -name 'Makefile' -exec rm -rf {} +
 rm -rf ./openwrt_snap/package/firmware ./openwrt_snap/package/kernel ./openwrt_snap/package/base-files ./openwrt_snap/package/Makefile
 cp -rf ./openwrt_snap/package/* ./openwrt/package/
-rm -rf openwrt/package/system/ca-certificates
-mv /tmp/ca-certificates.bak openwrt/package/system/ca-certificates
 cp -rf ./openwrt_snap/feeds.conf.default ./openwrt/feeds.conf.default
+# 修复缺失的 kmod-drm-lima
+cp -rf ./immortalwrt_24/package/kernel/linux/modules/video.mk ./openwrt/package/kernel/linux/modules/
 
 # 退出脚本
 exit 0
