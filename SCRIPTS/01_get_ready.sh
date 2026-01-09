@@ -49,7 +49,7 @@ xwrt_repo="https://github.com/QiuSimons/openwrt-natflow"
 fanchmwrt_repo="https://github.com/fanchmwrt/fanchmwrt.git"
 
 # 开始克隆仓库，并行执行
-clone_repo $fanchmwrt fanchmwrt-24.10.4 openwrt &
+clone_repo $fanchmwrt_repo fanchmwrt-24.10.4 openwrt &
 #clone_repo $openwrt_repo openwrt-24.10 openwrt &
 #clone_repo $openwrt_repo openwrt-24.10 openwrt_snap &
 #clone_repo $immortalwrt_repo openwrt-24.10 immortalwrt_24 &
