@@ -13,7 +13,7 @@ clone_repo() {
 }
 
 # 定义一些变量，存储仓库地址和分支名
-latest_release="v24.10.4"
+latest_release="fanchmwrt-24.10.4"
 immortalwrt_repo="https://github.com/immortalwrt/immortalwrt.git"
 immortalwrt_pkg_repo="https://github.com/immortalwrt/packages.git"
 immortalwrt_luci_repo="https://github.com/immortalwrt/luci.git"
@@ -49,7 +49,7 @@ xwrt_repo="https://github.com/QiuSimons/openwrt-natflow"
 fanchmwrt_repo="https://github.com/fanchmwrt/fanchmwrt.git"
 
 # 开始克隆仓库，并行执行
-clone_repo $fanchmwrt_repo fanchmwrt-24.10.4 openwrt &
+clone_repo $fanchmwrt_repo $latest_release openwrt &
 #clone_repo $openwrt_repo openwrt-24.10 openwrt &
 #clone_repo $openwrt_repo openwrt-24.10 openwrt_snap &
 #clone_repo $immortalwrt_repo openwrt-24.10 immortalwrt_24 &
