@@ -4,6 +4,7 @@ clear
 ### 基础部分 ###
 # 使用 O2 级别的优化
 sed -i 's/Os/O2/g' include/target.mk
+# 移除非必要插件
 sed -i '/luci-app-uhttpd \\/d' include/target.mk
 sed -i '/luci-app-ddns \\/d' include/target.mk
 # 更新 Feeds
