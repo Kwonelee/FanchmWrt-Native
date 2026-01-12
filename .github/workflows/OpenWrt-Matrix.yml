@@ -291,13 +291,13 @@ jobs:
           mv openwrt/bin/targets/${{ matrix.arch }}/${{ env.sysupgrade_glob }} ./artifact/ || true
           cd ./artifact/
           ls -Ahl
-          gzip -d *.gz || true
-          gzip --best *.img
-          ls -Ahl
-          sha256sum openwrt*${{ env.sha_match }}* | tee ${{ env.artifact_prefix }}-$(date +%Y-%m-%d)-${{ env.latest_release }}.sha256sum
-          zip ${{ env.artifact_prefix }}-$(date +%Y-%m-%d)-${{ env.latest_release }}-ext4.zip ${{ env.ext4_zip }}
-          zip ${{ env.artifact_prefix }}-$(date +%Y-%m-%d)-${{ env.latest_release }}-sfs.zip ${{ env.sfs_zip }}
-          ls -Ahl
+          #gzip -d *.gz || true
+          #gzip --best *.img
+          #ls -Ahl
+          #sha256sum openwrt*${{ env.sha_match }}* | tee ${{ env.artifact_prefix }}-$(date +%Y-%m-%d)-${{ env.latest_release }}.sha256sum
+          #zip ${{ env.artifact_prefix }}-$(date +%Y-%m-%d)-${{ env.latest_release }}-ext4.zip ${{ env.ext4_zip }}
+          #zip ${{ env.artifact_prefix }}-$(date +%Y-%m-%d)-${{ env.latest_release }}-sfs.zip ${{ env.sfs_zip }}
+          #ls -Ahl
 
       - name: Create release
         if: inputs.build_firmware
@@ -311,7 +311,7 @@ jobs:
           commit: "24.10"
           replacesArtifacts: true
           token: ${{ secrets.GH_TOKEN }}
-          artifacts: ./artifact/*.zip
+          artifacts: ./artifact/*sysupgrade.img.gz
 
       - name: Print Disk Space After
         run: df -h
