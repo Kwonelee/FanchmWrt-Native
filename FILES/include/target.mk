@@ -73,7 +73,6 @@ DEFAULT_PACKAGES.router:=\
 	luci-app-fwx-user \
 	luci-app-fwx-dashboard-setting \
 	luci-app-fwx-system \
-	luci-app-ddns \
 	luci-app-upnp \
 	luci-app-autoreboot \
 	luci-app-wol \
@@ -90,7 +89,6 @@ DEFAULT_PACKAGES.router:=\
 	kmod-nft-tproxy \
 	kmod-wireguard \
 	kmod-fs-ksmbd \
-	luci-app-uhttpd \
 	kmod-usb-storage \
 	kmod-usb-core \
 	kmod-fs-vfat \
