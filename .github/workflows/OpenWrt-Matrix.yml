@@ -309,7 +309,7 @@ jobs:
           allowUpdates: true
           prerelease: false
           tag: ${{ env.latest_release }}
-          commit: "24.10"
+          commit: "main"
           replacesArtifacts: true
           token: ${{ secrets.GITHUB_TOKEN }}
           artifacts: ./artifact/*squashfs-sysupgrade.img.gz
