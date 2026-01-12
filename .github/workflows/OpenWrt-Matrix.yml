@@ -312,7 +312,7 @@ jobs:
           commit: "24.10"
           replacesArtifacts: true
           token: ${{ secrets.GITHUB_TOKEN }}
-          artifacts: ./artifact/*sysupgrade.img.gz
+          artifacts: ./artifact/*squashfs-sysupgrade.img.gz
 
       - name: Print Disk Space After
         run: df -h
