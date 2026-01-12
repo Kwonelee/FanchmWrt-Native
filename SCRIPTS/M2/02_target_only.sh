@@ -42,6 +42,9 @@ cp -f $GITHUB_WORKSPACE/FILES/dts/rk3566-roc-pc.dts target/linux/rockchip/files/
 
 # ============================================================================================================
 # 自定义DIY⬇⬇⬇
+# 替换target.mk
+cp -f $GITHUB_WORKSPACE/FILES/include/target.mk include/target.mk
+
 # default LAN IP
 sed -i "s/192.168.1.1/192.168.5.88/g" package/base-files/files/bin/config_generate
 
