@@ -71,15 +71,25 @@ git clone https://github.com/sbwml/feeds_packages_lang_node-prebuilt feeds/packa
 rm -rf feeds/packages/net/zerotier
 git clone https://github.com/sbwml/feeds_packages_net_zerotier feeds/packages/net/zerotier
 
-# openlist
-git clone https://github.com/sbwml/luci-app-openlist2 package/new/openlist --depth=1
-
-# adguardhome
+# 移除待替换插件
 rm -rf feeds/packages/net/adguardhome
-git clone --depth=1 -b master https://github.com/w9315273/luci-app-adguardhome package/new/luci-app-adguardhome
-
-# filebrowser
 rm -rf feeds/luci/applications/luci-app-filebrowser
+
+# Git稀疏克隆，只克隆指定目录到本地
+function git_sparse_clone() {
+  branch="$1" repourl="$2" && shift 2
+  git clone --depth=1 -b $branch --single-branch --filter=blob:none --sparse $repourl
+  repodir=$(echo $repourl | awk -F '/' '{print $(NF)}')
+  cd $repodir && git sparse-checkout set $@
+  mv -f $@ ../package/new
+  cd .. && rm -rf $repodir
+}
+
+# 常见插件
+git_sparse_clone master https://github.com/vernesong/OpenClash luci-app-openclash
+git_sparse_clone main https://github.com/gdy666/luci-app-lucky luci-app-lucky lucky
+git_sparse_clone main https://github.com/sbwml/luci-app-openlist2 luci-app-openlist2 openlist2
+git clone --depth=1 -b master https://github.com/w9315273/luci-app-adguardhome package/new/luci-app-adguardhome
 
 
 # 自定义DIY⬆⬆⬆
