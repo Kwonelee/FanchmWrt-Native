@@ -99,7 +99,7 @@ git_sparse_clone main https://github.com/sbwml/luci-app-openlist2 luci-app-openl
 git_sparse_clone main https://github.com/sbwml/openwrt_pkgs filebrowser luci-app-filebrowser-go luci-app-ramfree luci-app-cpufreq luci-app-diskman luci-app-zerotier
 FB_VERSION="$(curl -s https://github.com/filebrowser/filebrowser/tags | grep -Eo 'v[0-9]+\.[0-9]+\.[0-9]+' | head -n 1 | sed 's/^v//')"
 sed -i "s/2.31.2/$FB_VERSION/g" package/new/filebrowser/Makefile
-sed -i 's/admin/OpenWrt/g' package/new/luci-app-filebrowser-go/root/etc/config/filebrowser
+sed -i 's/admin/FanchmWrt/g' package/new/luci-app-filebrowser-go/root/etc/config/filebrowser
 sed -i 's/services/nas/g' package/new/luci-app-filebrowser-go/luasrc/view/filebrowser/filebrowser_log.htm
 sed -i 's/services/nas/g' package/new/luci-app-filebrowser-go/luasrc/view/filebrowser/filebrowser_status.htm
 sed -i 's/services/nas/g' package/new/luci-app-filebrowser-go/luasrc/controller/filebrowser.lua
