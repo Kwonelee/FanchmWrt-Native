@@ -63,6 +63,9 @@ wget -qO- https://raw.githubusercontent.com/Kwonelee/Kwonelee/refs/heads/main/ru
 #mkdir -p package/base-files/files/lib/firmware/brcm
 #cp -a $GITHUB_WORKSPACE/FILES/firmware/brcm/* package/base-files/files/lib/firmware/brcm/
 
+# 处理Rust报错
+sed -i 's/ci-llvm=true/ci-llvm=false/g' feeds/packages/lang/rust/Makefile
+
 # golang 1.26
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/lang/golang
