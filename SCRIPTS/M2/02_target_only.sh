@@ -45,9 +45,43 @@ cp -f $GITHUB_WORKSPACE/FILES/dts/rk3566-roc-pc.dts target/linux/rockchip/files/
 # default LAN IP
 sed -i "s/192.168.1.1/192.168.5.88/g" package/base-files/files/bin/config_generate
 
+# clash_meta
+mkdir -p files/etc/openclash/core
+CLASH_META_URL="https://raw.githubusercontent.com/vernesong/OpenClash/core/master/meta/clash-linux-arm64.tar.gz"
+wget -qO- $CLASH_META_URL | tar xOvz > files/etc/openclash/core/clash_meta
+chmod +x files/etc/openclash/core/clash*
+
+# clash_config
+mkdir -p files/etc/config
+wget -qO- https://raw.githubusercontent.com/Kwonelee/Kwonelee/refs/heads/main/rule/openclash > files/etc/config/openclash
+
 # 集成设备无线
 #mkdir -p package/base-files/files/lib/firmware/brcm
 #cp -a $GITHUB_WORKSPACE/FILES/firmware/brcm/* package/base-files/files/lib/firmware/brcm/
+
+# golang 1.26
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/lang/golang
+
+# node - prebuilt
+rm -rf feeds/packages/lang/node
+git clone https://github.com/sbwml/feeds_packages_lang_node-prebuilt feeds/packages/lang/node -b packages-24.10
+
+# zerotier
+rm -rf feeds/packages/net/zerotier
+git clone https://github.com/sbwml/feeds_packages_net_zerotier feeds/packages/net/zerotier
+
+# openlist
+git clone https://github.com/sbwml/luci-app-openlist2 package/new/openlist --depth=1
+
+# adguardhome
+rm -rf feeds/packages/net/adguardhome
+git clone --depth=1 -b master https://github.com/w9315273/luci-app-adguardhome package/new/luci-app-adguardhome
+
+# filebrowser
+rm -rf feeds/luci/applications/luci-app-filebrowser
+
+
 # 自定义DIY⬆⬆⬆
 # ============================================================================================================
 
