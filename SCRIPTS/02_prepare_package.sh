@@ -11,6 +11,9 @@ sed -i '/luci-app-ddns \\/d' include/target.mk
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
+# Luci diagnostics.js
+sed -i "s/openwrt.org/github.com/g" feeds/luci/modules/luci-mod-network/htdocs/luci-static/resources/view/network/diagnostics.js
+
 # NTP
 sed -i 's/0.openwrt.pool.ntp.org/ntp1.aliyun.com/g' package/base-files/files/bin/config_generate
 sed -i 's/1.openwrt.pool.ntp.org/ntp2.aliyun.com/g' package/base-files/files/bin/config_generate
