@@ -45,6 +45,10 @@ cp -f $GITHUB_WORKSPACE/FILES/dts/rk3566-roc-pc.dts target/linux/rockchip/files/
 # default LAN IP
 sed -i "s/192.168.1.1/192.168.5.88/g" package/base-files/files/bin/config_generate
 
+# luci-theme-bootstrap
+#sed -i 's/font-size: 13px/font-size: 14px/g' feeds/luci/themes/luci-theme-bootstrap/htdocs/luci-static/bootstrap/cascade.css
+#sed -i 's/9.75px/10.75px/g' feeds/luci/themes/luci-theme-bootstrap/htdocs/luci-static/bootstrap/cascade.css
+
 # clash_meta
 mkdir -p files/etc/openclash/core
 CLASH_META_URL="https://raw.githubusercontent.com/vernesong/OpenClash/core/master/meta/clash-linux-arm64.tar.gz"
