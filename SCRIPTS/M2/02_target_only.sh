@@ -89,7 +89,6 @@ function git_sparse_clone() {
 git_sparse_clone master https://github.com/vernesong/OpenClash luci-app-openclash
 git_sparse_clone main https://github.com/gdy666/luci-app-lucky luci-app-lucky lucky
 git_sparse_clone main https://github.com/sbwml/luci-app-openlist2 luci-app-openlist2 openlist2
-git clone --depth=1 -b master https://github.com/w9315273/luci-app-adguardhome package/new/luci-app-adguardhome
 git_sparse_clone main https://github.com/sbwml/openwrt_pkgs filebrowser luci-app-filebrowser-go luci-app-ramfree
 FB_VERSION="$(curl -s https://github.com/filebrowser/filebrowser/tags | grep -Eo 'v[0-9]+\.[0-9]+\.[0-9]+' | head -n 1 | sed 's/^v//')"
 sed -i "s/2.31.2/$FB_VERSION/g" package/new/filebrowser/Makefile
@@ -100,6 +99,7 @@ sed -i 's/services/nas/g' package/new/luci-app-filebrowser-go/luasrc/controller/
 sed -i 's/_("File Browser"), 100/_("File Browser"), 1/' package/new/luci-app-filebrowser-go/luasrc/controller/filebrowser.lua
 sed -i '/local page.*filebrowser.*1)/i\
 entry({"admin", "nas"}, firstchild(), "NAS", 44).dependent = false' package/new/luci-app-filebrowser-go/luasrc/controller/filebrowser.lua
+git clone --depth=1 -b master https://github.com/w9315273/luci-app-adguardhome package/new/luci-app-adguardhome
 # 自定义DIY⬆⬆⬆
 # ============================================================================================================
 
