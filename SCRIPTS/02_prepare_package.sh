@@ -11,6 +11,16 @@ sed -i '/luci-app-ddns \\/d' include/target.mk
 ./scripts/feeds update -a
 ./scripts/feeds install -a
 
+# NTP
+sed -i 's/0.openwrt.pool.ntp.org/ntp1.aliyun.com/g' package/base-files/files/bin/config_generate
+sed -i 's/1.openwrt.pool.ntp.org/ntp2.aliyun.com/g' package/base-files/files/bin/config_generate
+sed -i 's/2.openwrt.pool.ntp.org/time1.cloud.tencent.com/g' package/base-files/files/bin/config_generate
+sed -i 's/3.openwrt.pool.ntp.org/time2.cloud.tencent.com/g' package/base-files/files/bin/config_generate
+
+# luci-theme-bootstrap
+#sed -i 's/font-size: 13px/font-size: 14px/g' feeds/luci/themes/luci-theme-bootstrap/htdocs/luci-static/bootstrap/cascade.css
+#sed -i 's/9.75px/10.75px/g' feeds/luci/themes/luci-theme-bootstrap/htdocs/luci-static/bootstrap/cascade.css
+
 ### 最后的收尾工作 ###
 # Lets Fuck
 #mkdir -p package/base-files/files/usr/bin
