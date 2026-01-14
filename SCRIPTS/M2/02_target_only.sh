@@ -77,6 +77,7 @@ rm -rf feeds/packages/net/zerotier
 # 移除待替换插件
 rm -rf feeds/packages/net/adguardhome
 rm -rf feeds/luci/applications/luci-app-filebrowser
+rm -rf feeds/luci/applications/luci-app-radicale
 
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
