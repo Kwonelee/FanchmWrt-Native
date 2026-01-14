@@ -21,6 +21,7 @@ CONFIG_PACKAGE_openlist2=y
 CONFIG_PACKAGE_luci-app-openlist2=y
 CONFIG_PACKAGE_ruby-yaml=y
 CONFIG_PACKAGE_luci-app-openclash=y
+CONFIG_PACKAGE_luci-app-ramfree=y
 
 ### DOCKER ###
 CONFIG_DOCKER_CGROUP_OPTIONS=y
