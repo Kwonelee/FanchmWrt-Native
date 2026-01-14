@@ -72,7 +72,7 @@ git clone https://github.com/sbwml/feeds_packages_lang_node-prebuilt feeds/packa
 
 # zerotier
 rm -rf feeds/packages/net/zerotier
-git clone https://github.com/sbwml/feeds_packages_net_zerotier feeds/packages/net/zerotier
+#git clone https://github.com/sbwml/feeds_packages_net_zerotier feeds/packages/net/zerotier
 
 # 移除待替换插件
 rm -rf feeds/packages/net/adguardhome
@@ -89,11 +89,11 @@ function git_sparse_clone() {
 }
 
 # 常见插件
-git_sparse_clone main https://github.com/Kwonelee/OpenWrt-Add luci-app-ramfree
+git_sparse_clone main https://github.com/Kwonelee/OpenWrt-Add luci-app-ramfree filebrowser luci-app-filebrowser-go zerotier luci-app-zerotier
 git_sparse_clone master https://github.com/vernesong/OpenClash luci-app-openclash
 git_sparse_clone main https://github.com/gdy666/luci-app-lucky luci-app-lucky lucky
 git_sparse_clone main https://github.com/sbwml/luci-app-openlist2 luci-app-openlist2 openlist2
-git_sparse_clone main https://github.com/sbwml/openwrt_pkgs filebrowser luci-app-filebrowser-go luci-app-cpufreq luci-app-diskman luci-app-zerotier
+git_sparse_clone main https://github.com/sbwml/openwrt_pkgs luci-app-cpufreq luci-app-diskman
 FB_VERSION="$(curl -s https://github.com/filebrowser/filebrowser/tags | grep -Eo 'v[0-9]+\.[0-9]+\.[0-9]+' | head -n 1 | sed 's/^v//')"
 sed -i "s/2.31.2/$FB_VERSION/g" package/new/filebrowser/Makefile
 sed -i 's/admin/FanchmWrt/g' package/new/luci-app-filebrowser-go/root/etc/config/filebrowser
