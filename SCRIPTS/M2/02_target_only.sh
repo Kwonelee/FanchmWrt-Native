@@ -89,6 +89,7 @@ function git_sparse_clone() {
 }
 
 # 常见插件
+git_sparse_clone main https://github.com/Kwonelee/OpenWrt-Add luci-app-ramfree
 git_sparse_clone master https://github.com/vernesong/OpenClash luci-app-openclash
 git_sparse_clone main https://github.com/gdy666/luci-app-lucky luci-app-lucky lucky
 git_sparse_clone main https://github.com/sbwml/luci-app-openlist2 luci-app-openlist2 openlist2
