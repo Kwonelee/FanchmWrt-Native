@@ -66,6 +66,7 @@ clone_repo $fanchmwrt_repo $latest_release openwrt &
 wait
 
 # 进行一些处理
+cp -f $GITHUB_WORKSPACE/FILES/feeds.conf.default feeds.conf.default
 #find openwrt/package/* -maxdepth 0 ! -name 'firmware' ! -name 'kernel' ! -name 'base-files' ! -name 'Makefile' -exec rm -rf {} +
 #rm -rf ./openwrt_snap/package/firmware ./openwrt_snap/package/kernel ./openwrt_snap/package/base-files ./openwrt_snap/package/Makefile
 #cp -rf ./openwrt_snap/package/* ./openwrt/package/
