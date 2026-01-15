@@ -72,7 +72,7 @@ git clone https://github.com/sbwml/feeds_packages_lang_node-prebuilt feeds/packa
 
 # zerotier
 rm -rf feeds/packages/net/zerotier
-#git clone https://github.com/sbwml/feeds_packages_net_zerotier feeds/packages/net/zerotier
+git clone https://github.com/sbwml/feeds_packages_net_zerotier feeds/packages/net/zerotier
 
 # 移除待替换插件
 rm -rf feeds/packages/net/adguardhome
