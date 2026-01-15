@@ -65,6 +65,7 @@ sed -i 's/ci-llvm=true/ci-llvm=false/g' feeds/packages/lang/rust/Makefile
 # golang 1.26
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/lang/golang
+cp -a $GITHUB_WORKSPACE/FILES/node-pnpm feeds/packages/lang/
 
 # node - prebuilt
 rm -rf feeds/packages/lang/node
