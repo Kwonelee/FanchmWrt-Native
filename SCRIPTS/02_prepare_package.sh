@@ -9,6 +9,8 @@ sed -i '/luci-app-uhttpd \\/d' include/target.mk
 sed -i '/luci-app-ddns \\/d' include/target.mk
 # 更新 Feeds
 ./scripts/feeds update -a
+cp -a $GITHUB_WORKSPACE/FILES/node-pnpm feeds/packages/lang/
+./scripts/feeds update packages
 ./scripts/feeds install -a
 
 # NTP
