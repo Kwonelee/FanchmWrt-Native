@@ -60,8 +60,7 @@ wget -qO- https://raw.githubusercontent.com/Kwonelee/Kwonelee/refs/heads/main/ru
 #cp -a $GITHUB_WORKSPACE/FILES/firmware/brcm/* package/base-files/files/lib/firmware/brcm/
 
 # 处理Rust报错
-#sed -i 's/ci-llvm=true/ci-llvm=false/g' feeds/packages/lang/rust/Makefile
-wget https://github.com/rust-lang/rust/commit/e8d97f0.patch -O feeds/packages/lang/rust/patches/e8d97f0.patch
+sed -i 's/ci-llvm=true/ci-llvm=false/g' feeds/packages/lang/rust/Makefile
 
 # golang 1.26
 rm -rf feeds/packages/lang/golang
