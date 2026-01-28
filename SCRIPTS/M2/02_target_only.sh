@@ -72,7 +72,6 @@ git clone https://github.com/sbwml/feeds_packages_lang_node-prebuilt feeds/packa
 
 # mac80211
 rm -rf package/kernel/mac80211
-git clone https://github.com/sbwml/package_kernel_mac80211 package/kernel/mac80211 -b openwrt-24.10
 
 # zerotier
 rm -rf feeds/packages/net/zerotier
