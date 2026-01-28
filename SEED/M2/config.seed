@@ -22,11 +22,6 @@ CONFIG_TOOLCHAINOPTS=y
 ### ZLIB
 CONFIG_ZLIB_OPTIMIZE_SPEED=y
 
-### AGGRESSIVE ###
-CONFIG_USE_GC_SECTIONS=y
-CONFIG_USE_LTO=y
-CONFIG_PACKAGE_luci-app-attendedsysupgrade=n
-
 ### BPF
 CONFIG_DEVEL=y
 CONFIG_BPF_TOOLCHAIN_HOST=y
@@ -43,6 +38,17 @@ CONFIG_KERNEL_XDP_SOCKETS=y
 CONFIG_PACKAGE_kmod-sched-core=y
 CONFIG_PACKAGE_kmod-sched-bpf=y
 CONFIG_PACKAGE_kmod-xdp-sockets-diag=y
+
+# SAVING RAM FOR DAE
+CONFIG_PACKAGE_zram-swap=y
+CONFIG_PACKAGE_kmod-lib-lz4=y
+CONFIG_PACKAGE_kmod-lib-lzo=y
+CONFIG_PACKAGE_kmod-lib-zstd=y
+
+### AGGRESSIVE ###
+CONFIG_USE_GC_SECTIONS=y
+CONFIG_USE_LTO=y
+CONFIG_PACKAGE_luci-app-attendedsysupgrade=n
 
 ### APPLICATION ###
 # CONFIG_PACKAGE_dnsmasq is not set
