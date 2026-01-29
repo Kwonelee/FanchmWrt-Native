@@ -70,9 +70,6 @@ git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/l
 rm -rf feeds/packages/lang/node
 git clone https://github.com/sbwml/feeds_packages_lang_node-prebuilt feeds/packages/lang/node -b packages-24.10
 
-# mac80211
-rm -rf package/kernel/mac80211
-
 # zerotier
 rm -rf feeds/packages/net/zerotier
 git clone https://github.com/sbwml/feeds_packages_net_zerotier feeds/packages/net/zerotier
