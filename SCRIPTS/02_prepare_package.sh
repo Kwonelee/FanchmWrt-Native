@@ -19,6 +19,18 @@ sed -i 's/1.openwrt.pool.ntp.org/ntp2.aliyun.com/g' package/base-files/files/bin
 sed -i 's/2.openwrt.pool.ntp.org/time1.cloud.tencent.com/g' package/base-files/files/bin/config_generate
 sed -i 's/3.openwrt.pool.ntp.org/time2.cloud.tencent.com/g' package/base-files/files/bin/config_generate
 
+# Docker 容器
+rm -rf ./feeds/luci/applications/luci-app-dockerman
+cp -rf ../dockerman/applications/luci-app-dockerman ./feeds/luci/applications/luci-app-dockerman
+sed -i '/auto_start/d' feeds/luci/applications/luci-app-dockerman/root/etc/uci-defaults/luci-app-dockerman
+pushd feeds/packages
+wget -qO- https://github.com/openwrt/packages/commit/e2e5ee69.patch | patch -p1
+wget -qO- https://github.com/openwrt/packages/pull/20054.patch | patch -p1
+popd
+sed -i '/sysctl.d/d' feeds/packages/utils/dockerd/Makefile
+rm -rf ./feeds/luci/collections/luci-lib-docker
+cp -rf ../docker_lib/collections/luci-lib-docker ./feeds/luci/collections/luci-lib-docker
+
 ### 最后的收尾工作 ###
 # Lets Fuck
 #mkdir -p package/base-files/files/usr/bin
