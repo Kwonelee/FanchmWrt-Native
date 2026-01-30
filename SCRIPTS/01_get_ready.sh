@@ -60,8 +60,8 @@ clone_repo $fanchmwrt_repo $latest_release openwrt &
 #clone_repo $openwrt_repo main openwrt_ma &
 #clone_repo $openwrt_pkg_repo master openwrt_pkg_ma &
 #clone_repo $openwrt_add_repo master OpenWrt-Add &
-#clone_repo $dockerman_repo master dockerman &
-#clone_repo $docker_lib_repo master docker_lib &
+clone_repo $dockerman_repo master dockerman &
+clone_repo $docker_lib_repo master docker_lib &
 # 等待所有后台任务完成
 wait
 
