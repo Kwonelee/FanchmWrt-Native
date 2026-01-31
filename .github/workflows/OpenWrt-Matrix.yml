@@ -147,16 +147,7 @@ jobs:
 
       - name: Maximize build space
         if: inputs.build_firmware
-        uses: easimon/maximize-build-space@master
-        with:
-          swap-size-mb: 1024
-          temp-reserve-mb: 512
-          root-reserve-mb: 4608
-          remove-dotnet: "true"
-          remove-android: "true"
-          remove-haskell: "true"
-          remove-codeql: "true"
-          remove-docker-images: "true"
+        uses: sbwml/actions@free-disk
 
       - name: Checkout
         uses: actions/checkout@main
