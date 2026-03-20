@@ -61,6 +61,5 @@ clone_repo $docker_lib_repo master docker_lib &
 # 等待所有后台任务完成
 wait
 
-
 # 退出脚本
 exit 0
