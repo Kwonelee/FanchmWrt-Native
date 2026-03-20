@@ -101,9 +101,6 @@ git clone --depth=1 -b master https://github.com/w9315273/luci-app-adguardhome p
 # 自定义DIY⬆⬆⬆
 # ============================================================================================================
 
-# 预配置一些插件
-#mkdir -p ./files/etc/hotplug.d/net
-#cp -rf ../PATCH/files/etc/hotplug.d/net/01-maximize_nic_rx_tx_buffers ./files/etc/hotplug.d/net/
 
 find ./ -name *.orig | xargs rm -f
 find ./ -name *.rej | xargs rm -f
