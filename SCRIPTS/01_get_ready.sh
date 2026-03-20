@@ -65,14 +65,6 @@ clone_repo $docker_lib_repo master docker_lib &
 # 等待所有后台任务完成
 wait
 
-# 进行一些处理
-#cp -f $GITHUB_WORKSPACE/FILES/feeds.conf.default ./openwrt/feeds.conf.default
-#find openwrt/package/* -maxdepth 0 ! -name 'firmware' ! -name 'kernel' ! -name 'base-files' ! -name 'Makefile' -exec rm -rf {} +
-#rm -rf ./openwrt_snap/package/firmware ./openwrt_snap/package/kernel ./openwrt_snap/package/base-files ./openwrt_snap/package/Makefile
-#cp -rf ./openwrt_snap/package/* ./openwrt/package/
-#cp -rf ./openwrt_snap/feeds.conf.default ./openwrt/feeds.conf.default
-# 修复缺失的 kmod-drm-lima
-#cp -rf ./immortalwrt_24/package/kernel/linux/modules/video.mk ./openwrt/package/kernel/linux/modules/
 
 # 退出脚本
 exit 0
