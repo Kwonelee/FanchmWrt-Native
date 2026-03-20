@@ -101,6 +101,8 @@ git clone --depth=1 -b master https://github.com/w9315273/luci-app-adguardhome p
 # 自定义DIY⬆⬆⬆
 # ============================================================================================================
 
+# 预配置一些插件
+#cp -rf ../PATCH/files ./files
 
 find ./ -name *.orig | xargs rm -f
 find ./ -name *.rej | xargs rm -f
