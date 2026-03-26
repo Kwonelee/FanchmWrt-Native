@@ -15,10 +15,11 @@ clone_repo() {
 # 定义一些变量，存储仓库地址和分支名
 latest_release="fanchmwrt-24.10.4"
 fanchmwrt_repo="https://github.com/fanchmwrt/fanchmwrt.git"
+dockerman_repo="https://github.com/lisaac/luci-app-dockerman"
+docker_lib_repo="https://github.com/lisaac/luci-lib-docker"
 
 # 开始克隆仓库，并行执行
 clone_repo $fanchmwrt_repo $latest_release openwrt &
-
 clone_repo $dockerman_repo master dockerman &
 clone_repo $docker_lib_repo master docker_lib &
 # 等待所有后台任务完成
