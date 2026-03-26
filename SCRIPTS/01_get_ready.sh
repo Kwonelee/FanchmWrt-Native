@@ -25,5 +25,8 @@ clone_repo $docker_lib_repo master docker_lib &
 # 等待所有后台任务完成
 wait
 
+# 进行一些处理
+cp -f $GITHUB_WORKSPACE/FILES/feeds.conf.default ./openwrt/feeds.conf.default
+
 # 退出脚本
 exit 0
