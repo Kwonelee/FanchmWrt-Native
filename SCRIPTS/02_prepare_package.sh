@@ -36,4 +36,7 @@ cp -rf ../docker_lib/collections/luci-lib-docker ./feeds/luci/collections/luci-l
 rm -rf .config
 sed -i 's,CONFIG_WERROR=y,# CONFIG_WERROR is not set,g' target/linux/generic/config-6.6
 
+./scripts/feeds update -i
+./scripts/feeds install -a
+
 #exit 0
