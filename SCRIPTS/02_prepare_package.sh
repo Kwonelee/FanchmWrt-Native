@@ -13,6 +13,9 @@ cp -a $GITHUB_WORKSPACE/FILES/node-pnpm feeds/packages/lang/
 ./scripts/feeds update packages
 ./scripts/feeds install -a
 
+# 定义内核版本
+KERNEL_VERSION="6.6"
+
 # NTP
 sed -i 's/0.openwrt.pool.ntp.org/ntp1.aliyun.com/g' package/base-files/files/bin/config_generate
 sed -i 's/1.openwrt.pool.ntp.org/ntp2.aliyun.com/g' package/base-files/files/bin/config_generate
@@ -34,7 +37,7 @@ cp -rf ../docker_lib/collections/luci-lib-docker ./feeds/luci/collections/luci-l
 ### 最后的收尾工作 ###
 # 生成默认配置及缓存
 rm -rf .config
-sed -i 's,CONFIG_WERROR=y,# CONFIG_WERROR is not set,g' target/linux/generic/config-6.6
+sed -i 's,CONFIG_WERROR=y,# CONFIG_WERROR is not set,g' target/linux/generic/config-${KERNEL_VERSION}
 
 ./scripts/feeds update -i
 ./scripts/feeds install -a
