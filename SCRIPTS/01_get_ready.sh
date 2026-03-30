@@ -13,7 +13,7 @@ clone_repo() {
 }
 
 # 定义一些变量，存储仓库地址和分支名
-latest_release="fanchmwrt-24.10.4"
+latest_release="fanchmwrt-25.12.2"
 fanchmwrt_repo="https://github.com/fanchmwrt/fanchmwrt.git"
 dockerman_repo="https://github.com/lisaac/luci-app-dockerman"
 docker_lib_repo="https://github.com/lisaac/luci-lib-docker"
