@@ -14,7 +14,7 @@ cp -a $GITHUB_WORKSPACE/FILES/node-pnpm feeds/packages/lang/
 ./scripts/feeds install -a
 
 # 定义内核版本
-KERNEL_VERSION="6.6"
+KERNEL_VERSION="6.12"
 
 # NTP
 sed -i 's/0.openwrt.pool.ntp.org/ntp1.aliyun.com/g' package/base-files/files/bin/config_generate
