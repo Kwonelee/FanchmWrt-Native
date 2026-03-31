@@ -57,13 +57,13 @@ rm -rf feeds/packages/net/zerotier
 git clone https://github.com/sbwml/feeds_packages_net_zerotier feeds/packages/net/zerotier
 
 # Docker
-rm -rf feeds/luci/applications/luci-app-dockerman
-git clone https://github.com/sbwml/luci-app-dockerman -b openwrt-25.12 feeds/luci/applications/luci-app-dockerman
-rm -rf feeds/packages/utils/{docker,dockerd,containerd,runc}
-git clone https://github.com/sbwml/packages_utils_docker feeds/packages/utils/docker
-git clone https://github.com/sbwml/packages_utils_dockerd feeds/packages/utils/dockerd
-git clone https://github.com/sbwml/packages_utils_containerd feeds/packages/utils/containerd
-git clone https://github.com/sbwml/packages_utils_runc feeds/packages/utils/runc
+#rm -rf feeds/luci/applications/luci-app-dockerman
+#git clone https://github.com/sbwml/luci-app-dockerman -b openwrt-25.12 feeds/luci/applications/luci-app-dockerman
+#rm -rf feeds/packages/utils/{docker,dockerd,containerd,runc}
+#git clone https://github.com/sbwml/packages_utils_docker feeds/packages/utils/docker
+#git clone https://github.com/sbwml/packages_utils_dockerd feeds/packages/utils/dockerd
+#git clone https://github.com/sbwml/packages_utils_containerd feeds/packages/utils/containerd
+#git clone https://github.com/sbwml/packages_utils_runc feeds/packages/utils/runc
 
 # 移除待替换插件
 rm -rf feeds/packages/net/adguardhome
