@@ -57,7 +57,8 @@ rm -rf feeds/packages/net/zerotier
 git clone https://github.com/sbwml/feeds_packages_net_zerotier feeds/packages/net/zerotier
 
 # 移除待替换插件
-#rm -rf feeds/packages/net/adguardhome
+rm -rf feeds/packages/net/adguardhome
+rm -rf feeds/luci/applications/luci-app-adguardhome
 rm -rf feeds/luci/applications/luci-app-filebrowser
 #rm -rf feeds/luci/applications/luci-app-radicale
 
@@ -79,7 +80,7 @@ git_sparse_clone main https://github.com/sbwml/openwrt_pkgs luci-app-cpufreq luc
 git_sparse_clone main https://github.com/Kwonelee/openwrt-packages luci-app-ramfree filebrowser luci-app-filebrowser-go
 FB_VERSION="$(curl -s https://github.com/filebrowser/filebrowser/tags | grep -Eo 'v[0-9]+\.[0-9]+\.[0-9]+' | head -n 1 | sed 's/^v//')"
 sed -i "s/2.54.0/$FB_VERSION/g" package/new/filebrowser/Makefile
-#git clone --depth=1 -b master https://github.com/w9315273/luci-app-adguardhome package/new/luci-app-adguardhome
+git clone --depth=1 -b master https://github.com/w9315273/luci-app-adguardhome package/new/luci-app-adguardhome
 # 自定义DIY⬆⬆⬆
 # ============================================================================================================
 
