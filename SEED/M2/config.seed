@@ -23,7 +23,7 @@ CONFIG_PACKAGE_openlist2=y
 CONFIG_PACKAGE_luci-app-openlist2=y
 CONFIG_PACKAGE_ruby-yaml=y
 CONFIG_PACKAGE_luci-app-openclash=y
-CONFIG_PACKAGE_luci-app-adguardhome=y
+# CONFIG_PACKAGE_luci-app-adguardhome is not set
 
 ### Docker
 CONFIG_PACKAGE_docker-compose=y
