@@ -90,7 +90,7 @@ git_sparse_clone main https://github.com/Kwonelee/openwrt-packages luci-app-ramf
 FB_VERSION="$(curl -s https://github.com/filebrowser/filebrowser/tags | grep -Eo 'v[0-9]+\.[0-9]+\.[0-9]+' | head -n 1 | sed 's/^v//')"
 sed -i "s/2.54.0/$FB_VERSION/g" package/new/filebrowser/Makefile
 #git clone --depth=1 -b master https://github.com/w9315273/luci-app-adguardhome package/new/luci-app-adguardhome
-git_sparse_clone main https://github.com/sirpdboy/luci-app-adguardhome luci-app-adguardhome
+#git_sparse_clone main https://github.com/sirpdboy/luci-app-adguardhome luci-app-adguardhome
 # 自定义DIY⬆⬆⬆
 # ============================================================================================================
 
