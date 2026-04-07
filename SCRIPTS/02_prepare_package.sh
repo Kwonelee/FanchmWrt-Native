@@ -49,6 +49,7 @@ wget -qO- https://raw.githubusercontent.com/Kwonelee/Kwonelee/refs/heads/main/ru
 #cp -a $GITHUB_WORKSPACE/FILES/firmware/brcm/* package/base-files/files/lib/firmware/brcm/
 
 # 处理Rust报错
+wget https://github.com/rust-lang/rust/commit/cdae267.patch -O feeds/packages/lang/rust/patches/cdae267.patch
 sed -i 's/--set=llvm\.download-ci-llvm=true/--set=llvm.download-ci-llvm=false/' feeds/packages/lang/rust/Makefile
 
 # golang 1.26
