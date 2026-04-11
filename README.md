@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>✨ 基于官方源码编译的FanchmWrt固件 ✨</h1>
+  <h1>✨ 基于项目源码编译的FanchmWrt固件 ✨</h1>
 
   <img src="https://img.shields.io/github/downloads/Kwonelee/FanchmWrt-Native/total.svg?style=for-the-badge&color=32C955"/>
   <img src="https://img.shields.io/github/stars/Kwonelee/FanchmWrt-Native.svg?style=for-the-badge&color=orange"/>
