@@ -45,7 +45,7 @@
 ✅ 支持 - ⏳ 计划中 - ⭕ 不支持
 
 ## 🤗 项目截图 [![](https://img.shields.io/badge/-项目截图-FFFFFF.svg)](#-项目截图-)
-![screenshots](./configfiles/screenshot/screenshot2.png)
+![screenshots](./FILES/screenshot/screenshot1.png)
 
 # 🌟 Star戳一戳，好运加满！😆
 > **"点过 `Star` 的朋友，颜值与智慧双双在线！✨"**
