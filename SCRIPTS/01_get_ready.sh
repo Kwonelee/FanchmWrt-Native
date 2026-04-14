@@ -23,6 +23,7 @@ wait
 
 # 进行一些处理
 cp -f $GITHUB_WORKSPACE/FILES/feeds.conf.default ./openwrt/feeds.conf.default
+cp -f $GITHUB_WORKSPACE/FILES/fanchmwrt ./openwrt/
 
 # 退出脚本
 exit 0
