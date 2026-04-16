@@ -270,7 +270,12 @@ return baseclass.extend({
 				if (i === 0 && pathSegment === 'admin') {
 					const homeItem = E('li', { 'class': 'home-item' }, [
 						E('a', { 'href': '/cgi-bin/luci/admin/fwx_dashboard', 'title': _('Home') }, [
-							E('span', { 'class': 'home-icon' }, ['🏠'])
+							E('img', {
+							    'src': '/luci-static/fanchmwrt/icons/home.png',  // 👈 PNG 图标路径
+								'class': 'home-icon',
+								'alt': 'Home',
+								'style': 'width: 16px; height: 16px; vertical-align: middle;'
+							 })
 						])
 					]);
 					breadcrumbItems.push(homeItem);
