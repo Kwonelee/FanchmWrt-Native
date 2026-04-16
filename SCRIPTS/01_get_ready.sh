@@ -23,6 +23,7 @@ wait
 
 # 进行一些处理
 cp -f $GITHUB_WORKSPACE/FILES/feeds.conf.default ./openwrt/feeds.conf.default
+cp -f $GITHUB_WORKSPACE/FILES/menu-fanchmwrt.js ./openwrt/package/fcm/luci-theme-fanchmwrt/htdocs/luci-static/resources/menu-fanchmwrt.js
 cp -rf $GITHUB_WORKSPACE/FILES/fanchmwrt/ ./openwrt/package/fcm/luci-theme-fanchmwrt/htdocs/luci-static/fanchmwrt/
 
 # 退出脚本
