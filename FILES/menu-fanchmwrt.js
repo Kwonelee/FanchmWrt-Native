@@ -274,7 +274,7 @@ return baseclass.extend({
 							    'src': '/luci-static/fanchmwrt/icons/home.png',  // 👈 PNG 图标路径
 								'class': 'home-icon',
 								'alt': 'Home',
-								'style': 'width: 16px; height: 16px; vertical-align: middle;'
+								'style': 'width: 20px; height: 20px; vertical-align: middle;'
 							 })
 						])
 					]);
