@@ -12,6 +12,11 @@ return baseclass.extend({
 		'fwx_internet_record': 'fwx_internet_record',
 		'fwx_user': 'fwx_user',
 		'fwx_monitor': 'fwx_monitor',
+		'fwx_app_center': 'fwx_app_center',
+		'fwx_tools': 'fwx_tools',
+		'fwx_games': 'fwx_games',
+		'fwx_cloud_service': 'fwx_cloud_service',
+		'fwx_ac': 'fwx_ac'
 	},
 	defaultIcon: 'default',
 	__init__() {
@@ -115,7 +120,11 @@ return baseclass.extend({
 		const isWide = this.isWideScreen();
 		
 		if (isWide) {
-			const titleText = 'FanchmWrt';
+			const titleText = (
+				(L && L.env && L.env.hostname) ||
+				(document.querySelector('header a.brand') && document.querySelector('header a.brand').textContent || '').trim() ||
+				'FanchmWrt'
+			);
 			const brandElement = E('a', { 'class': 'top-navbar-brand', 'href': L.url('admin', 'fwx_dashboard') }, [
 				E('span', { 'class': 'top-navbar-title' }, [titleText])
 			]);
@@ -403,26 +412,11 @@ return baseclass.extend({
 
 
 	getMenuCategory(menuName) {
-		const basicMenus = [
-			'fwx_dashboard',    
-			'fwx_parental_control',
-			'fwx_user',
-			'fwx_internet_record',
-			'fwx_advance',    
-			'fwx_network',
-			'fwx_session_stat',
-			'fwx_user_record',
-			'fwx_monitor',
-		];
-
 		const normalizedName = (menuName || '').toLowerCase();
-		const normalizedBasicMenus = basicMenus.map(m => m.toLowerCase());
-		
-		if (normalizedBasicMenus.includes(normalizedName)) {
+		if (normalizedName.startsWith('fwx')) {
 			return 'menu-item-basic';
-		} else {
-			return 'menu-item-advanced';
 		}
+		return 'menu-item-advanced';
 	},
 
 	renderTabMenu(tree, url, level) {
@@ -507,7 +501,7 @@ return baseclass.extend({
 			const linkclass = (level === 0 && submenu.firstElementChild) ? 'menu' : '';
 			const linkurl = submenu.firstElementChild ? '#' : L.url(url, child.name);
 
-			const categoryClass = this.getMenuCategory(child.name);
+			const categoryClass = (level === 0) ? this.getMenuCategory(child.name) : '';
 			const classParts = [];
 			if (subclass) classParts.push(subclass);
 			if (categoryClass) classParts.push(categoryClass);
@@ -524,7 +518,18 @@ return baseclass.extend({
 			if (level === 0 && submenu.firstElementChild) {
 				const isActive = ((L.env.dispatchpath[1] == child.name) && (L.env.dispatchpath[0] == tree.name));
 				if (isActive) {
-					li.classList.add('active', 'open');
+					li.classList.add('open');
+				}
+			}
+			
+			if (level === 0 && !submenu.firstElementChild) {
+				const isActive = ((L.env.dispatchpath[1] == child.name) && (L.env.dispatchpath[0] == tree.name));
+				if (isActive) {
+					li.classList.add('active');
+					const topLink = li.querySelector('a');
+					if (topLink) {
+						topLink.classList.add('active');
+					}
 				}
 			}
 
@@ -651,7 +656,18 @@ return baseclass.extend({
 			if (level === 0 && submenu.firstElementChild) {
 				const isActive = ((L.env.dispatchpath[1] == child.name) && (L.env.dispatchpath[0] == tree.name));
 				if (isActive) {
-					li.classList.add('active', 'open');
+					li.classList.add('open');
+				}
+			}
+			
+			if (level === 0 && !submenu.firstElementChild) {
+				const isActive = ((L.env.dispatchpath[1] == child.name) && (L.env.dispatchpath[0] == tree.name));
+				if (isActive) {
+					li.classList.add('active');
+					const topLink = li.querySelector('a');
+					if (topLink) {
+						topLink.classList.add('active');
+					}
 				}
 			}
 
