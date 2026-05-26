@@ -13,7 +13,7 @@ clone_repo() {
 }
 
 # 定义一些变量，存储仓库地址和分支名
-latest_release="fanchmwrt-25.12.2"
+latest_release="fanchmwrt-25.12.4"
 fanchmwrt_repo="https://github.com/fanchmwrt/fanchmwrt.git"
 
 # 开始克隆仓库，并行执行
