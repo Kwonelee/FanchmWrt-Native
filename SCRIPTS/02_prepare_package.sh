@@ -93,6 +93,7 @@ function git_sparse_clone() {
 git_sparse_clone master https://github.com/vernesong/OpenClash luci-app-openclash
 git_sparse_clone main https://github.com/gdy666/luci-app-lucky luci-app-lucky lucky
 cp -f $GITHUB_WORKSPACE/FILES/lucky_status.htm package/new/luci-app-lucky/luasrc/view/lucky/lucky_status.htm
+sed -i "s/option enabled '1'/option enabled '0'/" package/new/lucky/files/luckyuci
 git_sparse_clone main https://github.com/sbwml/luci-app-openlist2 luci-app-openlist2 openlist2
 git_sparse_clone main https://github.com/sbwml/openwrt_pkgs luci-app-cpufreq luci-app-diskman luci-app-zerotier
 git_sparse_clone main https://github.com/Kwonelee/openwrt-packages luci-app-ramfree filebrowser luci-app-filebrowser-go
