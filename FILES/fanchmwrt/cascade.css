@@ -1249,8 +1249,8 @@ header {
 }
 
 .top-user-icon {
-	width: 17px;
-	height: 17px;
+	width: 18px;
+	height: 18px;
 	display: inline-block;
 	background-image: url('icons/fwx_logout.png');
 	background-size: cover;
@@ -1265,8 +1265,8 @@ header {
 }
 
 .top-more-icon {
-	width: 17px;
-	height: 17px;
+	width: 18px;
+	height: 18px;
 	display: inline-block;
 	background-image: url('icons/fwx_model.png');
 	background-size: cover;
