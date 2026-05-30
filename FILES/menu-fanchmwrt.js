@@ -158,7 +158,7 @@ return baseclass.extend({
 					'type': 'button',
 					'aria-label': _('Mode menu')
 				}, [
-					E('span', { 'class': 'top-more-icon' }, ['⋮'])
+					E('span', { 'class': 'top-more-icon' }, [E('img', { 'src': '/luci-static/fanchmwrt/icons/fwx_model.png', 'style': 'width: 25px; height: 25px;' })])
 				]),
 				E('ul', { 'class': 'top-user-dropdown top-mode-dropdown' }, [
 					createModeItem('basic', 'Normal Mode', L.url('admin', 'fwx_dashboard')),
@@ -282,7 +282,6 @@ return baseclass.extend({
 							E('img', {
 							    'src': '/luci-static/fanchmwrt/icons/home.png',  // 👈 PNG 图标路径
 								'class': 'home-icon',
-								'alt': 'Home',
 								'style': 'width: 20px; height: 20px; vertical-align: middle;'
 							 })
 						])
