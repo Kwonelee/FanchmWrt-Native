@@ -158,7 +158,7 @@ return baseclass.extend({
 					'type': 'button',
 					'aria-label': _('Mode menu')
 				}, [
-					E('span', { 'class': 'top-more-icon' }, [E('img', { 'src': '/luci-static/fanchmwrt/icons/fwx_model.png', 'style': 'width: 25px; height: 25px;' })])
+					E('span', { 'class': 'top-more-icon', 'aria-hidden': 'true' })
 				]),
 				E('ul', { 'class': 'top-user-dropdown top-mode-dropdown' }, [
 					createModeItem('basic', 'Normal Mode', L.url('admin', 'fwx_dashboard')),
@@ -281,7 +281,6 @@ return baseclass.extend({
 						E('a', { 'href': '/cgi-bin/luci/admin/fwx_dashboard', 'title': _('Home') }, [
 							E('img', {
 							    'src': '/luci-static/fanchmwrt/icons/home.png',  // 👈 PNG 图标路径
-								'class': 'home-icon',
 								'style': 'width: 20px; height: 20px; vertical-align: middle;'
 							 })
 						])
