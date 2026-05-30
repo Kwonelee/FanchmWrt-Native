@@ -1252,7 +1252,7 @@ header {
 	width: 25px;
 	height: 25px;
 	display: inline-block;
-	background-image: url('icons/fwx_user.png');
+	background-image: url('icons/fwx_logout.png');
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -1265,9 +1265,15 @@ header {
 }
 
 .top-more-icon {
-	font-size: 20px;
-	line-height: 1;
-	transform: translateY(-1px);
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+	background-image: url('icons/fwx_model.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 50%;
+	overflow: hidden;
 }
 
 .top-user-dropdown {
