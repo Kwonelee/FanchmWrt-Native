@@ -3945,8 +3945,13 @@ div.cbi-value var.cbi-tooltip-container,
 }
 
 .breadcrumb li.home-item .home-icon {
-	font-size: 16px;
-	line-height: 1;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-image: url('icons/home.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .breadcrumb li:not(.home-item) span {
