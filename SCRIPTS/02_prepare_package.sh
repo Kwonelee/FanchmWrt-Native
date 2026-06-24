@@ -41,8 +41,8 @@ wget -qO- $CLASH_META_URL | tar xOvz > files/etc/openclash/core/clash_meta
 chmod +x files/etc/openclash/core/clash*
 
 # clash_config
-mkdir -p files/etc/config
-wget -qO- https://raw.githubusercontent.com/Kwonelee/Kwonelee/refs/heads/main/rule/openclash > files/etc/config/openclash
+#mkdir -p files/etc/config
+#wget -qO- https://raw.githubusercontent.com/Kwonelee/Kwonelee/refs/heads/main/rule/openclash > files/etc/config/openclash
 
 # 集成设备无线
 #mkdir -p package/base-files/files/lib/firmware/brcm
